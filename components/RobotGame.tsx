@@ -129,9 +129,9 @@ export const LEVELS: Level[] = [
     startDir: "right",
     goalPos: { x: 4, y: 0 },
     availableCmds: ["move", "turn", "if-obstacle"],
-    maxCmds: 8,
+    maxCmds: 9,
     xp: 70,
-    hint: "if(obstáculo) { girar derecha } te hace rodear la pared.",
+    hint: "Avanza, usa si-obstáculo para girar, baja, avanza por abajo y sube de nuevo.",
   },
 ];
 
@@ -140,7 +140,7 @@ const CMD_DEFS: Record<string, Omit<Cmd, "id">> = {
   "move":         { type: "move",        label: "Avanzar",       icon: "⬆️" },
   "turn-right":   { type: "turn",        label: "Girar →",       icon: "↩️", dir: "right" },
   "turn-left":    { type: "turn",        label: "Girar ←",       icon: "↪️", dir: "left"  },
-  "loop-start":   { type: "loop-start",  label: "for ( 3 )",     icon: "🔁", times: 3     },
+  "loop-start":   { type: "loop-start",  label: "for ( 5 )",     icon: "🔁", times: 5     },
   "loop-end":     { type: "loop-end",    label: "} fin for",     icon: "⏹️"               },
   "if-obstacle":  { type: "if-obstacle", label: "si obstáculo →","icon": "🚧"              },
 };
