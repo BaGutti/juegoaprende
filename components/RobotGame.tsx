@@ -129,7 +129,7 @@ export const LEVELS: Level[] = [
     startDir: "right",
     goalPos: { x: 4, y: 0 },
     availableCmds: ["move", "turn", "if-obstacle"],
-    maxCmds: 9,
+    maxCmds: 10,
     xp: 70,
     hint: "Avanza, usa si-obstáculo para girar, baja, avanza por abajo y sube de nuevo.",
   },
