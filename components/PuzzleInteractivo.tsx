@@ -266,15 +266,20 @@ function PuzzleOrdenar({ puzzle, onCompletado }: Props) {
     setOrden(nuevo);
   };
 
+  const ordenContenido = (ord: number[]) =>
+    ord.map((i) => puzzle.bloques?.[i] ?? "");
+
   const verificar = () => {
     setEnviado(true);
-    if (JSON.stringify(orden) === JSON.stringify(puzzle.ordenCorrecto)) {
+    const contenidoCorrecto = ordenContenido(puzzle.ordenCorrecto ?? []);
+    if (JSON.stringify(ordenContenido(orden)) === JSON.stringify(contenidoCorrecto)) {
       setTimeout(() => onCompletado(puzzle.xp), 1400);
     }
   };
 
   const esCorrecta =
-    JSON.stringify(orden) === JSON.stringify(puzzle.ordenCorrecto);
+    JSON.stringify(ordenContenido(orden)) ===
+    JSON.stringify(ordenContenido(puzzle.ordenCorrecto ?? []));
 
   return (
     <div>
